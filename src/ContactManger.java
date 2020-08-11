@@ -68,7 +68,16 @@ public class ContactManger {
         contactList.add(newContact);
     }
 
-    public void edit() {
+    public void edit(int index,String phoneNumber, String group,String fullName, String gender, String address, String dateOfBirth,String email ) {
+
+        Contact current = contactList.get(index);
+        current.setPhoneNumber(phoneNumber);
+        current.setGroup(group);
+        current.setFullName(fullName);
+        current.setGender(gender);
+        current.setAddress(address);
+        current.setDateOfBirth(dateOfBirth);
+        current.setEmail(email);
 
     }
 

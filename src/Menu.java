@@ -16,7 +16,6 @@ public class Menu {
     private final String ZERO = "0";
 
 
-
     private static String choice ;
     void showMenu(){
         while (true) {
@@ -45,7 +44,7 @@ public class Menu {
                 contactManger.addContact();
                 break;
             case THREE:
-                contactManger.edit();
+                editMenu();
                 break;
             case FOUR:
                 menuRemove();
@@ -66,6 +65,15 @@ public class Menu {
                 showMenu();
 
         }
+    }
+
+    private void editMenu() {
+        int index;
+        String phone;
+        //String group
+        System.out.println("nhap index cua contact can chinh sua: ");
+
+
     }
 
     void menuRemove(){
