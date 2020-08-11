@@ -45,11 +45,11 @@ public class Contact {
     }
 
     public String getPhoneNumber() {
-        return group;
+        return phoneNumber;
     }
 
     public void setPhoneNumber(String phoneNumber) {
-        this.group = phoneNumber;
+        this.phoneNumber = phoneNumber;
     }
 
     public String getFullName() {
