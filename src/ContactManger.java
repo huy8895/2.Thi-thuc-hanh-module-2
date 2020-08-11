@@ -68,9 +68,33 @@ public class ContactManger {
         contactList.add(newContact);
     }
 
-    public void edit(int index,String phoneNumber, String group,String fullName, String gender, String address, String dateOfBirth,String email ) {
+    public void edit(int index) {
 
-        Contact current = contactList.get(index);
+        String phoneNumber;
+        String group;
+        String fullName;
+        String gender;
+        String address;
+        String dateOfBirth;
+        String email;
+        do {
+            System.out.println("nhap so dien thoai:");
+            phoneNumber = scanner.nextLine();
+            System.out.println("nhap nhom danh ba:");
+            group = scanner.nextLine();
+            System.out.println("nhap gioi ho ten: ");
+            fullName = scanner.nextLine();
+            System.out.println("nhap gioi tinh: ");
+            gender = scanner.nextLine();
+            System.out.println("nhap dia chi: ");
+            address = scanner.nextLine();
+            System.out.println("nhap ngay sinh: ");
+            dateOfBirth = scanner.nextLine();
+            System.out.println("nhap email: ");
+            email = scanner.nextLine();
+        } while (phoneNumber == null || group == null || fullName== null||gender == null || address == null ||dateOfBirth == null || email == null);
+
+        Contact current =  contactList.get(index);
         current.setPhoneNumber(phoneNumber);
         current.setGroup(group);
         current.setFullName(fullName);

@@ -69,10 +69,11 @@ public class Menu {
 
     private void editMenu() {
         int index;
-        String phone;
-        //String group
-        System.out.println("nhap index cua contact can chinh sua: ");
 
+        System.out.println("nhap index cua contact can chinh sua: ");
+        index = scanner.nextInt();
+        scanner.nextLine();
+        contactManger.edit(index);
 
     }
 
