@@ -6,22 +6,36 @@ public class ContactManger {
     Iterator<Contact> iterator = contactList.iterator();
     ArrayList<Contact> tempList = new ArrayList<>();
     Scanner scanner = new Scanner(System.in);
+    private final static ContactManger instance = new ContactManger();
+    Queue<Contact> queue = new LinkedList<>();
+
 
 
     public ContactManger() {
+        queue.addAll(contactList);
     }
 
-    public void showList() {
-//        tempList.addAll(contactList);
-//        ArrayList<Contact> result = new ArrayList<>();
-//        while (iterator.hasNext()){
-//
-//        }
-        for (Contact contact: contactList){
+    public ArrayList<Contact> getListContact(){
+        return contactList;
+    }
+
+    public void showList(){
+        ArrayList<Contact> result = new ArrayList<>();
+        for (int i = 0; i < 5; i++){
+            result.add(queue.poll());
+        }
+        showList(result);
+    }
+
+    public void showList(ArrayList<Contact> list) {
+        for (Contact contact: list){
             System.out.println(contact);
         }
 
+    }
 
+    public static ContactManger getInstance(){
+        return instance;
     }
 
     public void addContact() {
@@ -53,7 +67,7 @@ public class ContactManger {
         contactList.add(newContact);
     }
 
-    public void updateList() {
+    public void edit() {
 
     }
 

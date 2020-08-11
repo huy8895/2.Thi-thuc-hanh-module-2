@@ -21,27 +21,42 @@ public class ContactData {
         oos.close();
     }
 
-    void read(){
+    void readCSV(){
         try {
             BufferedReader bufferedReader = new BufferedReader(new FileReader(CSVFile));
             String line;
             String[] arrayString;
             Contact contact = new Contact();
             while ((line = bufferedReader.readLine())!= null){
-                arrayString = line.split(",");
-                for (String string: arrayString){
-
+                arrayString = line.split(", ");
+                for (String s: arrayString){
+                    System.out.print(s + "\t");
                 }
+                System.out.println();
 
             }
 
-        } catch (FileNotFoundException e) {
-            System.out.println("file khong ton tai");
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
     }
 
 
-
+    public void writerCSV() {
+        try {
+            PrintWriter writer = new PrintWriter(CSVFile);
+            writer.write("Số điện thoại,Nhóm,Họ tên,Giới tính,Địa chỉ,Ngày sinh,Email");
+            for (Contact contact: contactManger.contactList){
+                writer.println(contact.getPhoneNumber()+
+                        ","+contact.getGroup()+
+                        ","+contact.getFullName()+
+                        ","+contact.getGender()+
+                        ","+contact.getAddress()+
+                        ","+contact.getDateOfBirth()+
+                        ","+contact.getEmail());
+            }
+        } catch (FileNotFoundException e) {
+            System.out.println(e.getMessage());
+        }
+    }
 }
