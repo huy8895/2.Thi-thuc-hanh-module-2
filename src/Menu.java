@@ -39,7 +39,7 @@ public class Menu {
     void setFunction(){
         switch (choice){
             case ONE:
-                contactManger.showList();
+                contactManger.showList(contactManger.getListContact());
                 break;
             case TWO:
                 contactManger.addContact();
