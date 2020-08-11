@@ -39,6 +39,10 @@ public class Menu {
         switch (choice){
             case ONE:
                 contactManger.showList(contactManger.getListContact());
+                if (contactManger.getListContact().size() == 0){
+                    System.out.println("danh sanh rong");
+                }
+                System.out.println();
                 break;
             case TWO:
                 contactManger.addContact();

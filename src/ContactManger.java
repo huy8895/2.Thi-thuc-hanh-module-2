@@ -82,7 +82,7 @@ public class ContactManger {
             phoneNumber = scanner.nextLine();
             System.out.println("nhap nhom danh ba:");
             group = scanner.nextLine();
-            System.out.println("nhap gioi ho ten: ");
+            System.out.println("nhap ho ten: ");
             fullName = scanner.nextLine();
             System.out.println("nhap gioi tinh: ");
             gender = scanner.nextLine();
