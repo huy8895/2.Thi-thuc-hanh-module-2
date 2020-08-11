@@ -31,6 +31,7 @@ public class ContactManger {
         for (Contact contact: list){
             System.out.println(contact);
         }
+        System.out.println();
 
     }
 
