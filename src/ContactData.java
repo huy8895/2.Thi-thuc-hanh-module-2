@@ -46,7 +46,7 @@ public class ContactData {
         try {
             PrintWriter writer = new PrintWriter(CSVFile);
             writer.write("Số điện thoại,Nhóm,Họ tên,Giới tính,Địa chỉ,Ngày sinh,Email");
-            for (Contact contact: contactManger.contactList){
+            for (Contact contact: contactManger.getListContact()){
                 writer.println(contact.getPhoneNumber()+
                         ","+contact.getGroup()+
                         ","+contact.getFullName()+

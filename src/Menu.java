@@ -45,7 +45,7 @@ public class Menu {
                 System.out.println();
                 break;
             case TWO:
-                contactManger.addContact();
+                menuAdd();
                 break;
             case THREE:
                 editMenu();
@@ -71,9 +71,37 @@ public class Menu {
         }
     }
 
+    private void menuAdd() {
+        String phoneNumber;
+        String group;
+        String fullName;
+        String gender;
+        String address;
+        String dateOfBirth;
+        String email;
+        do {
+            System.out.println("nhap so dien thoai:");
+            phoneNumber = scanner.nextLine();
+            System.out.println("nhap nhom danh ba:");
+            group = scanner.nextLine();
+            System.out.println("nhap ho ten: ");
+            fullName = scanner.nextLine();
+            System.out.println("nhap gioi tinh: ");
+            gender = scanner.nextLine();
+            System.out.println("nhap dia chi: ");
+            address = scanner.nextLine();
+            System.out.println("nhap ngay sinh: ");
+            dateOfBirth = scanner.nextLine();
+            System.out.println("nhap email: ");
+            email = scanner.nextLine();
+        } while (phoneNumber == null || group == null || fullName== null||gender == null || address == null ||dateOfBirth == null || email == null);
+
+        Contact newContact = new Contact(phoneNumber,group,fullName,gender,address,dateOfBirth,email);
+        contactManger.addContact(newContact);
+    }
+
     private void editMenu() {
         int index;
-
         System.out.println("nhap index cua contact can chinh sua: ");
         index = scanner.nextInt();
         scanner.nextLine();
